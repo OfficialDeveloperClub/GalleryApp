@@ -33,7 +33,6 @@ struct GalleryView: View {
                 }
             }
         }
-        .padding()
     }
 }
 

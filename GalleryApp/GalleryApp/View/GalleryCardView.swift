@@ -13,28 +13,28 @@ struct GalleryCardView: View {
     var ns: Namespace.ID
 
     var body: some View {
-        ZStack {
-            Image(card.image)
-                .resizable()
-                .scaledToFill()
-                .matchedGeometryEffect(id: "\(card.id)-image", in: ns)
-                .frame(width: 400, height: 400)
-                .overlay(alignment: .bottom) {
-                    Text(card.title)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .padding()
-                        .background {
-                            Rectangle()
-                                .fill(.ultraThinMaterial)
-                        }
-                        .matchedGeometryEffect(id: "\(card.id)-title", in: ns)
-                }
-        }
-        .cornerRadius(30)
-        .matchedGeometryEffect(id: "\(card.id)-card", in: ns)
+        Image(card.image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 400, height: 400)
+            .clipped()
+            .matchedGeometryEffect(id: "\(card.id)-image", in: ns)
+            .overlay(alignment: .bottom) {
+                Text(card.title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .clipped()
+                    .padding()
+                    .background {
+                        Rectangle()
+                            .fill(.ultraThinMaterial)
+                    }
+                    .matchedGeometryEffect(id: "\(card.id)-title", in: ns)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 30))
+            .matchedGeometryEffect(id: "\(card.id)-card", in: ns)
     }
 }
 
