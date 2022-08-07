@@ -15,8 +15,13 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             ScrollView {
+                Text("All products")
+                    .font(.largeTitle)
+                    .bold()
+
                 GalleryView(ns: ns)
             }
+            .padding(.top)
             if model.isDetailShown, let card = model.selectedCard {
                 DetailsCardView(card: card, ns: ns)
             }

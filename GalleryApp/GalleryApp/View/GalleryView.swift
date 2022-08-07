@@ -22,7 +22,6 @@ struct GalleryView: View {
                 if card != model.selectedCard {
                     GalleryCardView(card: card, ns: ns)
                         .onTapGesture {
-                            model.closeCard()
                             withAnimation(.openCard) {
                                 model.selectedCard = card
                                 model.isDetailShown = true

@@ -72,6 +72,12 @@ struct DetailsCardView: View {
         .rotation3DEffect(.degrees(viewState.height / 40), axis: (x: 1, y: 0, z: 0), perspective: 1)
         .offset(x: viewState.width, y: viewState.height)
         .gesture(drag)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            Rectangle()
+                .fill(.ultraThinMaterial)
+        }
+        .ignoresSafeArea()
     }
 
     var drag: some Gesture {

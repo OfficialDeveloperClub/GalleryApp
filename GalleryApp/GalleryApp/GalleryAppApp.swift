@@ -13,6 +13,7 @@ struct GalleryAppApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(Model())
+                .statusBar(hidden: true)
         }
     }
 }
