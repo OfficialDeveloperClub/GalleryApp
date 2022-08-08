@@ -15,7 +15,7 @@ struct GalleryCardView: View {
     var body: some View {
         Image(card.image)
             .resizable()
-            .aspectRatio(contentMode: .fill)
+            .scaledToFill()
             .frame(width: 400, height: 400)
             .clipped()
             .matchedGeometryEffect(id: "\(card.id)-image", in: ns)
@@ -34,6 +34,7 @@ struct GalleryCardView: View {
                     .matchedGeometryEffect(id: "\(card.id)-title", in: ns)
             }
             .clipShape(RoundedRectangle(cornerRadius: 30))
+            .contentShape(RoundedRectangle(cornerRadius: 30))
             .matchedGeometryEffect(id: "\(card.id)-card", in: ns)
     }
 }
