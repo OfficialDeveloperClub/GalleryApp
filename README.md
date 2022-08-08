@@ -1,5 +1,7 @@
 # GalleryApp
 
+![](https://raw.githubusercontent.com/OfficialDeveloperClub/GalleryApp/main/Assets/logo.jpeg)
+
 В этом мини-курсе мы вместе напишем полноценное приложение для отображения галереи продуктов Apple
 
 Мы разберем каждый шаг - от создания проекта, до написания самих экранов и добавления анимаций
